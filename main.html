@@ -16,12 +16,19 @@
   // let rubEu = rub × EU;
   // alert(`Евро ${rubEu}`);
 
-  const count = 10;
+  const count = 5;
   let randomNum = Math.trunc(Math.random() * 100);
-  console.log(randomNum);
 
   for (let i = 1; i < count; i++) {
-    
+  let userNum = +prompt("Введите число");
+    if(userNum === randomNum) {
+      document.write("Вы уголали <br>");
+      break;
+    } else if (userNum < randomNum) {
+      document.write("Вы ввели слишкол маленькое число <br>");
+    } else if (userNum > randomNum) {
+      document.write("Вы ввели слишкол большое число <br>");
+    }
   }
 </script>
 </body>
