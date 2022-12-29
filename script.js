@@ -100,8 +100,10 @@ let sum = +prompt(`Введите сумму`),
 
 const getConvertors = (sum, percent) => {
 	for (let i = 0; i < 5; i++) { 
-		eahr += (sum * (percent / 100)) ;
-		console.log(eahr);
+		eahr += Math.trunc(sum * (percent / 100));
+		sum += eahr;
+		alert(`${i + 1} год прибыль от процентов ${eahr}`);
+		alert(`${i + 1} год прибыль от процентов ${sum}`);
 	}
 };
 
