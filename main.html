@@ -22,16 +22,16 @@
    console.log("Привет");
  }*/
 
- let n;
- do {
-  n = +prompt("Введите целое чётное число");
- } while (isNaN(n) || n < 0)
-
- let sum = 0;
- for (let i = 0; i < n; i++) {
-  sum += i;
-  document.write(`${sum} <br>`)
- }
+//  let n;
+//  do {
+//   n = +prompt("Введите целое чётное число");
+//  } while (isNaN(n) || n < 0)
+// 
+//  let sum = 0;
+//  for (let i = 0; i < n; i++) {
+//   sum += i;
+//   document.write(`${sum} <br>`)
+//  }
 
 // let i = 0;
 // 
@@ -55,6 +55,57 @@
       document.write("Вы ввели слишкол большое число <br>");
     }
   } */
+
+
+
+  // Загадать загадку. Если ответ верен – поздравить пользователя. Затем сообщить, что игра окончена
+//   let mysteryOnion = prompt(`Внутри белый, при еде горький.`),
+//       counter = 0;
+// 
+//   if (mysteryOnion == "лук" || mysteryOnion == "Лук") {
+//     alert(`Вы угадали!`);
+//     counter++;
+//   } else {
+//     alert(`Не правильный ответ!`);
+//   }
+//   
+//   let mysteryShower = prompt(`Висит То холодный — то горячий, То висячий — то стоячий.`);
+// 
+//   if (mysteryShower == "душ" || mysteryShower == "Душ") {
+//     alert(`Вы угадали!`);
+//     counter++;
+//   } else {
+//     alert(`Не правильный ответ!`);
+//   }
+//   
+//   let mysteryСabbage = prompt(`Сидит дед во сто шуб одет`);
+// 
+//   if (mysteryСabbage == "капуста" || mysteryСabbage == "Капуста") {
+//     alert(`Вы угадали!`);
+//     counter++;
+//   } else {
+//     alert(`Не правильный ответ!`);
+//   }
+// 
+//   document.write(`Правильных ответов ${counter}`);
+
+
+
+  // Пользователь вводит сумму вклада и процент, который будет начисляться ежегодно. Отобразить размер вклада поочередно на ближайшие 5 лет.
+
+  let sum = +prompt(`Введите сумму вклада`);
+  let percent = +prompt(`Введите процент`);
+
+  for (let i = 0; i < 5; i++) {
+    let razmer = (((sum * percent * 1)/100)+sum);
+    let total = 0;
+    total = total + razmer;
+    document.write(`${razmer}`);
+    console.log(total);
+  }
+
+
+
 </script>
 
 </body>
