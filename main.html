@@ -95,12 +95,13 @@
 
   let sum = +prompt(`Введите сумму вклада`);
   let percent = +prompt(`Введите процент`);
+  let eahr = 0;
 
   for (let i = 0; i < 5; i++) {
-    let razmer = (((sum * percent * 1)/100)+sum);
+    eahr = Math.trunc(sum * (percent / 100));
     let total = 0;
-    total = total + razmer;
-    document.write(`${razmer}`);
+    sum += eahr;
+    document.write(`${i +1} год прибыль от процентов ${sum} <br>`);
     console.log(total);
   }
 
