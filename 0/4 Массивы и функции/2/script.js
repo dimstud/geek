@@ -1,19 +1,33 @@
-const arr = [
+const words = [
 	["apple", "яблоко"],
 	["go", "вперёд"],
-	["i", "я"],
+	["weapons", "оружие"],
 	["you", "ты"],
 ];
 
-while(arr.length != 0) {
-	let i = parseInt(Math.random() * arr.length);
+const hardWords = [
+	["food", "еда"],
+	["mom", "мама"],
+	["king", "король"],
+	["dead", "мёртв"],
+];
 
-let userTranslate = prompt(`Как переводиться слово ${arr[i][0]} ?`, ``);
+const getTranslateWords = (arr) => {
+	while(arr.length != 0) {
+		let i = parseInt(Math.random() * arr.length);
+	
+		let userTranslate = prompt(`Как переводиться слово ${arr[i][0]} ?`, ``);
+	
+		if (userTranslate == arr[i][1]) {
+			alert(`Вы молодец!`)
+			arr.splice(i, 1);
+		} else {
+			alert(`Правильный ответ: ${arr[i][1]}`)
+		}
+	}
+};
 
-if (userTranslate == arr[i][1]) {
-	alert(`Вы молодец!`)
-	arr.splice(i, 1);
-} else {
-	alert(`Правильный ответ: ${arr[i][1]}`)
-}
-}
+getTranslateWords(words);
+alert(`Вы прошли 1 этап. Впереди сложный этап`);
+getTranslateWords(hardWords);
+alert('Выпрошли сложный этап');
