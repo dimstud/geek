@@ -27,27 +27,44 @@ const checkMysterys = () => {
 };
 
 
-/*
-	if (opa == "Капуста" || opa == "капуста") {
-		text.
-		alert('Это правильный ответ!');
-		count++;
-	} else {
-		alert('Это не правильный ответ');
-	}
-	
-	if (lump == "Лампочка" || lump == "лампочка") {
-		alert('Это правильный ответ!');
-		count++;
-	} else {
-		alert('Это не правильный ответ');
-	}
 
-	if (onion == "Лук" || onion == "лук") {
-		alert('Это правильный ответ!');
-		count++;
-	} else {
-		alert('Это не правильный ответ');
+let ans = Math.trunc(Math.random() * 100),
+ansUser = document.getElementById("ans"),
+textGuess = document.querySelector("#text");
+const countAttempt = 5;
+
+const guessStart = () => {
+	for (let indexCount = 1; indexCount <= countAttempt; indexCount++) {
+		if (ansUser.value == ans) {
+			textGuess.textContent = `Вы угадали!`;
+			break;
+		} else if (ansUser.value < ans) {
+			textGuess.textContent = `Слишком маленькое число. Попыток осталось ${countAttempt - indexCount}.`;
+			guessStart();
+		} else if (ansUser.value > ans) {
+			textGuess.textContent = `Слишком большое число. Попыток осталось ${countAttempt - indexCount}.`;
+			guessStart();
+		}
 	}
-	
-	*/
+	textGuess.textContent = `Правильный ответ ${ans}.`;
+};
+
+// 
+// alert(`Правильное число ${ans}`);
+// 
+// 
+// const count = 5;
+//  let randomNum = Math.trunc(Math.random() * 100);
+// 
+//  for (let i = 1; i < count; i++) {
+//  let userNum = +prompt("Введите число");
+// 	 if(userNum === randomNum) {
+// 		 document.write("Вы уголали <br>");
+// 		 break;
+// 	 } else if (userNum < randomNum) {
+// 		 document.write("Вы ввели слишкол маленькое число <br>");
+// 	 } else if (userNum > randomNum) {
+// 		 document.write("Вы ввели слишкол большое число <br>");
+// 	 }
+//  }
+ 
