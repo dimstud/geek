@@ -1,28 +1,53 @@
 
-let mysteryOpa = prompt('Сидит дед во сто шуб одет');
+let text = document.querySelector(".head");
+let box = document.querySelector(".puzzle__box");
+
 let count = 0;
-if (mystery == "Капуста") {
-	alert('Это правильный ответ!');
-	count++;
-} else {
-	alert('Это не правильный ответ');
-}
 
-let mysteryLump = prompt('Висит груша нельзя скушать');
+const checkMystery = (input, ans) => {
+	let inputId = document.getElementById(input).value;
+	inputId = inputId.toLowerCase();
+	for (let i = 0; i < ans.length; i++) {
+		if (inputId == ans[i]) {
+			count++;
+			break;
+		}	
+	}
+};
 
-if (mystery == "Лампочка") {
-	alert('Это правильный ответ!');
-	count++;
-} else {
-	alert('Это не правильный ответ');
-}
+const checkMysterys = () => {
+	checkMystery("opa", ["Капуста", "капуста"]);
+	checkMystery("lump", ["Лампочка", "лампочка"]);
+	checkMystery("onion", ["Лук", "лук"]);
 
-let mysteryOnion = prompt('Кто его раздевает тот слезы проливает');
+	text.textContent = `Игра окончина. Правилиных ответов: ${count}`;
+	box.style.display = "none";
 
-if (mystery == "Лук") {
-	alert('Это правильный ответ!');
-	count++;
-} else {
-	alert('Это не правильный ответ');
-}
-alert(`Игра окончина. Правилиных ответов ${count}`);
+	// alert(`Игра окончина. Правилиных ответов ${count}`);
+};
+
+
+/*
+	if (opa == "Капуста" || opa == "капуста") {
+		text.
+		alert('Это правильный ответ!');
+		count++;
+	} else {
+		alert('Это не правильный ответ');
+	}
+	
+	if (lump == "Лампочка" || lump == "лампочка") {
+		alert('Это правильный ответ!');
+		count++;
+	} else {
+		alert('Это не правильный ответ');
+	}
+
+	if (onion == "Лук" || onion == "лук") {
+		alert('Это правильный ответ!');
+		count++;
+	} else {
+		alert('Это не правильный ответ');
+	}
+	
+	*/
